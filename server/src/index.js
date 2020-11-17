@@ -14,6 +14,7 @@ if (result.error) {
 console.log(result.parsed);
 
 const middlewares = require('./middlewares');
+const logs = require('./api/logs');
 
 const app = express();
 
@@ -37,11 +38,15 @@ app.use(
   }),
 );
 
+app.use(express.json());
+
 app.get('/', (req, res) => {
   res.json({
     message: 'Hello World!',
   });
 });
+
+app.use('/api/logs', logs);
 
 app.use(middlewares.notFound);
 
