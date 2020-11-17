@@ -1,5 +1,7 @@
 const express = require('express');
+// morgan logs metadata about incoming requests
 const morgan = require('morgan');
+// helmet prevents clients from seeing the framework used in the backend, increasing security
 const helmet = require('helmet');
 const cors = require('cors');
 const mongoose = require('mongoose');
