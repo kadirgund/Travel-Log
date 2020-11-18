@@ -5,9 +5,10 @@ const morgan = require('morgan');
 const helmet = require('helmet');
 const cors = require('cors');
 const mongoose = require('mongoose');
+const path = require('path');
 
 const dotenv = require('dotenv');
-const result = dotenv.config();
+const result = dotenv.config({ path: path.resolve(__dirname, '../.env') });
 
 if (result.error) {
   throw result.error;
