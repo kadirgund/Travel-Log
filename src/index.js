@@ -10,10 +10,10 @@ const path = require('path');
 const dotenv = require('dotenv');
 const result = dotenv.config();
 
-if (result.error) {
-  console.log(result);
-  throw result.error;
-}
+// if (result.error) {
+//   console.log(result);
+//   throw result.error;
+// }
 
 console.log(result);
 
