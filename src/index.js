@@ -8,13 +8,14 @@ const mongoose = require('mongoose');
 const path = require('path');
 
 const dotenv = require('dotenv');
-const result = dotenv.config({ path: path.resolve(__dirname, '../.env') });
+const result = dotenv.config();
 
 if (result.error) {
+  console.log(result);
   throw result.error;
 }
 
-console.log(result.parsed);
+console.log(result);
 
 const middlewares = require('./middlewares');
 const logs = require('./api/logs');
