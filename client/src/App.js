@@ -112,7 +112,6 @@ const App = () => {
             anchor='top'
           >
             <div className='popup'>
-              <h3>Add your new log entry here!</h3>
               <LogEntryForm
                 onClose={() => {
                   setAddEntryLocation(null);
