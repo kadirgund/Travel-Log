@@ -5,15 +5,17 @@ const morgan = require('morgan');
 const helmet = require('helmet');
 const cors = require('cors');
 const mongoose = require('mongoose');
+const path = require('path');
 
 const dotenv = require('dotenv');
 const result = dotenv.config();
 
-if (result.error) {
-  throw result.error;
-}
+// if (result.error) {
+//   console.log(result);
+//   throw result.error;
+// }
 
-console.log(result.parsed);
+console.log(result);
 
 const middlewares = require('./middlewares');
 const logs = require('./api/logs');
@@ -34,11 +36,7 @@ mongoose
 
 app.use(morgan('common'));
 app.use(helmet());
-app.use(
-  cors({
-    origin: process.env.CORS_ORIGIN,
-  }),
-);
+app.use(cors());
 
 app.use(express.json());
 
