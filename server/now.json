@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "name": "travel-log",
+  "builds": [
+    {
+      "src": "src/index.js",
+      "use": "@now/node-server"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/.*",
+      "dest": "src/index.js"
+    }
+  ],
+  "alias": ["kadirs-travel-log"],
+  "env": {
+    "NODE_ENV": "production",
+    "PORT": "1337",
+    "DATABASE_URL": "@travel-log-db",
+    "CORS_ORIGIN": "",
+    "API_KEY": "@travel-log-api-key"
+  }
+}
